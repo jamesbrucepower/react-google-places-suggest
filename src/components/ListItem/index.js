@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   ${props =>
     props.clickable &&
     "&:hover {background: #f5f5f5;cursor: pointer;} "} ${props =>
-      props.active && "background: #f5f5f5;"};
+    props.active && "background: #f5f5f5;"};
 `
 
 const Item = styled.div`
@@ -30,7 +30,7 @@ class ListItem extends React.Component {
 
   renderItem(item) {
     const {customRender} = this.props
-    return customRender ? customRender(item) : this.renderDefault(item)
+    return customRender ? customRender(this.props) : this.renderDefault(item)
   }
 
   render() {

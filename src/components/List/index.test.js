@@ -21,7 +21,7 @@ const ListEmptyFixture = <List />
 const customLabel = "List"
 const ListCustomFixture = (
   <List
-    customContainerRender={items => (
+    customContainerRender={({items}) => (
       <div>
         {customLabel}
         {items.map(item => item.description)}
@@ -30,7 +30,7 @@ const ListCustomFixture = (
   />
 )
 const ListCustomItemFixture = (
-  <List customRender={prediction => prediction && prediction.description} />
+  <List customRender={({prediction}) => prediction && prediction.description} />
 )
 
 describe("Suggest", () => {
